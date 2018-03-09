@@ -10,24 +10,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     orders: [],
-    products: [
-      {
-        id: 1,
-        name: 'Max',
-      },
-      {
-        id: 2,
-        name: 'Anna',
-      },
-      {
-        id: 3,
-        name: 'Chris',
-      },
-      {
-        id: 4,
-        name: 'Sven',
-      },
-    ],
+    products: [],
   },
   getters,
   mutations,

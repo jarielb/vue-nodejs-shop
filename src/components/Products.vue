@@ -4,12 +4,13 @@
     <el-row>
       <el-col :span="6" v-for="(product, index) in products" :key="index">
         <el-card :body-style="{ padding: '0px' }">
-          <img src="http://i.dailymail.co.uk/i/newpix/2018/03/07/10/49F6631400000578-0-image-a-4_1520418407303.jpg" class="image">
+          <img :src="'http://localhost:3000/' + product.image" class="image">
           <div style="padding: 14px;">
-            <span>{{product.name}}</span>
+            <span>{{ product.name }}</span>
             <div class="bottom clearfix">
-              <time class="time">{{ currentDate }}</time>
-              <el-button type="text" class="button">Operating button</el-button>
+              <time class="time">${{ product.price }}</time>
+              <time class="time"></time>
+              <el-button type="text" class="button">Add to cart</el-button>
             </div>
           </div>
         </el-card>
@@ -22,11 +23,6 @@
 import { mapGetters } from 'vuex';
 
 export default {
-  data() {
-    return {
-      currentDate: new Date(),
-    };
-  },
   computed: {
     ...mapGetters({
       products: 'products',
